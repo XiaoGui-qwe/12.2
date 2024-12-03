@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function dayOfYear(dateString) {
+    var date = new Date(dateString);
+    if (isNaN(date.getTime())) {
+        console.log("日期格式不合法");
+        return;
+    }
+    var start = new Date(date.getFullYear(), 0, 0);
+    var diff = date - start;
+    return Math.floor(diff / (1000 * 60 * 60 * 24));
+}
+var dateString = "2010-01-01";
+var  day = dayOfYear(dateString);
+console.log("这是2010年的第"+day+"天"); 
+</script>
+</html>

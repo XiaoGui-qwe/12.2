@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+   function addTime(date, amount, unit) {
+    const units = {
+        ms: 1,
+        s: 1000,
+        m: 60000,
+        h: 3600000,
+        d: 86400000,
+        w: 604800000,
+        M: 2592000000,
+        y: 31536000000  
+    };
+
+    const pluralUnit = unit.endsWith('s') ? unit : unit + 's';
+
+    if (!units[unit] && !units[pluralUnit]) {
+        throw new Error("无效的时间单位");
+    }
+
+    const timeToAdd = units[unit] || units[pluralUnit];
+    return new Date(date.getTime() + amount * timeToAdd);
+}
+
+
+const now = new Date();
+const newTime = addTime(now, 5, 'h');
+console.log(newTime);
+
+</script>
+</html>

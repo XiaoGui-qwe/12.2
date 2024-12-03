@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function weekOfYear(week) {
+        var enddate = new Date(year,11,31);
+        var startdate =new Date(year,0,1);
+        var startweek =startdate.getDate();
+        var endweek =enddate.getDate();
+        
+        var totalday=0;
+        var fullWeeks = Math.floor((enddate - startdate) / (7 * 24 * 60 * 60 * 1000));
+        
+    }
+
+    console.log(weekOfYear('2024/12/1'));
+</script>
+</html>
